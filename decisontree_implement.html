@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>DICISION TREE/ CÂY QUYẾT ĐỊNH</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <script src="data.js"></script>
+    <script src="ham.js"></script>
+    <script src="ham_cayquyetdinh.js"></script>
+<style type="text/css">
+    body{
+        padding-left: 100px;
+    }
+</style>
+</head>
+<body>
+<H1>DICISION TREE/ CÂY QUYẾT ĐỊNH IMPLEMENTATION</H1>
+<DIV>
+    <p>Input data (cột kết quả cuối cùng các thuộc tính phải là "Yes" hoặc "No" chương trình mới so sánh chính xác được)</p>
+    Row number: <input type="text" id="rows_id">
+    Column number: <input type="text" id="col_id">
+    <button onclick="createTable()">Create table new</button>
+    Hoặc 
+    <button onclick="createTableDefault()">Create default example</button>
+</DIV>
+<table class="table" id="Tablesample">
+</table>
+<br>
+<button onclick="makeRule()">Click to run</button>
+<p><b><h1>Rules learn/ Các luật học được:</h1></b></p>
+<p id="demo"></p>
+
+<div style="height: 500px">
+</div>
+<script>
+//Global variable/ Object
+var rows=0;
+var cols=0;
+var Data=[];
+var Results=[];
+var Attribute=[];
+var ColUse=[];
+var RowUse=[];
+
+//chay chuong trinh
+function makeRule()
+{
+
+    getDataFromeTable();
+    initialVariables();
+
+    Result=[];
+    chayketqua(Data,ColUse,RowUse,Result,Attribute);
+    var luat=trinhBayKetQua(Result,Attribute)
+    document.getElementById("demo").innerHTML =luat;
+}
+    
+
+</script>
+</body>
+</html>

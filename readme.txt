@@ -1,0 +1,1 @@
+Chạy file decisontree_implement.html bằng trình duyệt web
