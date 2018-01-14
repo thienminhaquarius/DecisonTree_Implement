@@ -8,7 +8,7 @@ var chayketqua=function(data,colUse,rowUse,result,attribute)//attribute bien toa
 		result="Khong co data";
 		return;
 	}
-	var check=checkYesNo(data,rowUse);
+	var check=checkYesNo(data,rowUse,attribute);
 	if(check==1) //all yes
 	{	
 		var kq=taoObjectKetQua(colUse,attribute);
@@ -32,14 +32,14 @@ var chayketqua=function(data,colUse,rowUse,result,attribute)//attribute bien toa
 
 	}
 	//truong hop yes no khong dong nhat
-	var entropyS=timS(data,rowUse); //tim S 
+	var entropyS=timS(data,rowUse,attribute); //tim S 
 
 	var gainMax=-1;
 	var indexTrongcolUse=-1;
 	var dulieu;
 	for(var i=0;i<colUse.length-1;i++) //tinh gain cac thuoc tinh, hang cuoi la 'Play' nen khong dua vao
 	{
-		if(colUse[i].trangthai==null) // thuc tinh chua duoc chon lam node.
+		if(colUse[i].trangthai=="?") // thuc tinh chua duoc chon lam node.
 		{
 
 			var gain=0;

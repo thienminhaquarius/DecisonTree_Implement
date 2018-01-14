@@ -19,19 +19,23 @@ var DataDefault = [
 {outlook:'Rain', temp:'Mild', humidity:'High', wind: 'Strong',play:'No'}
 ];
 
+var DataDefault2=[
+{'Học trên lớp':'20%', 'Học nhóm':'Có', 'Làm bài tập':'Không làm', 'Tự học ở nhà':'Có', 'Ghi bài':'Không', 'Qua môn':'Yes'},
+{'Học trên lớp':'80%', 'Học nhóm':'Không', 'Làm bài tập':'Không làm', 'Tự học ở nhà':'Không', 'Ghi bài':'Không', 'Qua môn':'No'},
+{'Học trên lớp':'20%', 'Học nhóm':'Có', 'Làm bài tập':'Không làm', 'Tự học ở nhà':'Có', 'Ghi bài':'Không', 'Qua môn':'Yes'},
+{'Học trên lớp':'80%', 'Học nhóm':'Không', 'Làm bài tập':'Có', 'Tự học ở nhà':'Có', 'Ghi bài':'Không', 'Qua môn':'No'},
+{'Học trên lớp':'20%', 'Học nhóm':'Không', 'Làm bài tập':'Không làm', 'Tự học ở nhà':'Không', 'Ghi bài':'Có', 'Qua môn':'No'},
+{'Học trên lớp':'80%', 'Học nhóm':'Có', 'Làm bài tập':'Thỉnh thoảng', 'Tự học ở nhà':'Có', 'Ghi bài':'Có', 'Qua môn':'Yes'},
+{'Học trên lớp':'20%', 'Học nhóm':'Không', 'Làm bài tập':'Không làm', 'Tự học ở nhà':'Có', 'Ghi bài':'Không', 'Qua môn':'Yes'},
+{'Học trên lớp':'20%', 'Học nhóm':'Có', 'Làm bài tập':'Không làm', 'Tự học ở nhà':'Không', 'Ghi bài':'Không', 'Qua môn':'Yes'},
+{'Học trên lớp':'100%', 'Học nhóm':'Có', 'Làm bài tập':'Không làm', 'Tự học ở nhà':'Có', 'Ghi bài':'Không', 'Qua môn':'No'},
+{'Học trên lớp':'20%', 'Học nhóm':'Có', 'Làm bài tập':'Không làm', 'Tự học ở nhà':'Không', 'Ghi bài':'Không', 'Qua môn':'Yes'},
+{'Học trên lớp':'100%', 'Học nhóm':'Có', 'Làm bài tập':'Thỉnh thoảng', 'Tự học ở nhà':'Có', 'Ghi bài':'Có', 'Qua môn':'No'},
+{'Học trên lớp':'50%', 'Học nhóm':'Không', 'Làm bài tập':'Không làm', 'Tự học ở nhà':'Có', 'Ghi bài':'Không', 'Qua môn':'Yes'},
+{'Học trên lớp':'50%', 'Học nhóm':'Không', 'Làm bài tập':'Thỉnh thoảng', 'Tự học ở nhà':'Không', 'Ghi bài':'Có', 'Qua môn':'Yes'},
+{'Học trên lớp':'20%', 'Học nhóm':'Có', 'Làm bài tập':'Có', 'Tự học ở nhà':'Không', 'Ghi bài':'Không', 'Qua môn':'Yes'},
+{'Học trên lớp':'0%', 'Học nhóm':'Có', 'Làm bài tập':'Không làm', 'Tự học ở nhà':'Có', 'Ghi bài':'Không', 'Qua môn':'No'},
+{'Học trên lớp':'20%', 'Học nhóm':'Không', 'Làm bài tập':'Thỉnh thoảng', 'Tự học ở nhà':'Có', 'Ghi bài':'Không', 'Qua môn':'No'},
+{'Học trên lớp':'80%', 'Học nhóm':'Có', 'Làm bài tập':'Không làm', 'Tự học ở nhà':'Có', 'Ghi bài':'Không', 'Qua môn':'Yes'}
 
-// nhập cac attribute cần xét (bỏ day, vì day xem như số thứ tự, không có giá trị)
-//var Attribute=['outlook','temp','humidity','wind','play'];
-
-// Khởi tạo cột tất cả trangthai:Null, thuoctinh là các thuộc tính khác nhau trong cột, thêm thuộc tính thì viết thêm
-/*
-var ColUse=				[	{trangthai:null,thuoctinh:['Sunny','Overcast','Rain']},
-							{trangthai:null,thuoctinh:['Hot','Cool','Mild']},
-							{trangthai:null,thuoctinh:['High','Normal']},
-							{trangthai:null,thuoctinh:['Weak','Strong']},
-							{trangthai:null,thuoctinh:['Yes','No']}
-							//thêm thuộc tính khác tương ứng với data
-							];
-// khởi tạo số dòng
-var RowUse=[0,1,2,3,4,5,6,7,8,9,10,11,12,13];
-*/
+];

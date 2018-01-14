@@ -22,14 +22,27 @@
     Column number: <input type="text" id="col_id">
     <button onclick="createTable()">Create table new</button>
     Hoặc 
-    <button onclick="createTableDefault()">Create default example</button>
+    <button onclick="createTableDefault()">Create default example1</button>
+    Hoặc 
+    <button onclick="createTableDefault2()">Create default example2</button>
 </DIV>
 <table class="table" id="Tablesample">
 </table>
 <br>
-<button onclick="makeRule()">Click to run</button>
-<p><b><h1>Rules learn/ Các luật học được:</h1></b></p>
-<p id="demo"></p>
+<button id="myButton" onclick="makeRule()" style="display: none;">Click to run</button>
+<div id="myDIV" style="display: none;">
+	<hr>
+	<p><b><h1>Rules learn/ Các luật học được:</h1></b></p>
+	<p id="demo"></p>
+	<hr>
+	<p><h1>Query/ Truy vấn</h1></p>
+	<table id="query"></table>
+	<br>
+	<p id="ketqua"></p>
+	<br>
+	<button onclick="btn_Query()">Query</button>
+</div>
+
 
 <div style="height: 500px">
 </div>
@@ -38,7 +51,7 @@
 var rows=0;
 var cols=0;
 var Data=[];
-var Results=[];
+var Result=[];
 var Attribute=[];
 var ColUse=[];
 var RowUse=[];
@@ -46,14 +59,61 @@ var RowUse=[];
 //chay chuong trinh
 function makeRule()
 {
+	//show hide
+	var x = document.getElementById("myDIV");
+        x.style.display = "block";
+
 
     getDataFromeTable();
     initialVariables();
 
     Result=[];
     chayketqua(Data,ColUse,RowUse,Result,Attribute);
+    //alert(JSON.stringify(Result));
     var luat=trinhBayKetQua(Result,Attribute)
     document.getElementById("demo").innerHTML =luat;
+    generateQuery(cols,ColUse,Attribute);
+}
+
+function btn_Query(){
+	document.getElementById("ketqua").innerHTML ='';
+	var queryString=[];
+	var txt='Kết quả: <b>'+Attribute[Attribute.length-1] +'</b> = ';
+	// lay cac gia tri query
+	for(var i=0;i<cols-1;i++){
+		queryString.push(document.getElementById("att"+i).value);
+	}
+	// tim ket qua
+	// nếu tìm được kết quả thì trả về Yes/No
+	//alert(JSON.stringify(Result));
+	//alert(JSON.stringify(queryString));
+	for(var i=0;i<Result.length;i++){
+		var j=0;
+		for(x in Result[i]){
+
+			if(j==queryString.length){	// tim duoc ket qua, dung ham query
+				txt+=Result[i][x];
+				document.getElementById("ketqua").innerHTML=txt;
+				return; 
+			}
+			if(Result[i][x]=='?')
+			{	// x la ? thi queryString nhan bat ky tri nao cung dung, nen continue
+				j++;
+				continue;
+			}
+			if(Result[i][x]!=queryString[j])
+			{
+				//alert('x: '+ x);
+				//alert('queryString: '+queryString[j]);
+				break;	// khac keets quar caau query=> dung` sosanh voiws keets quar ke tiep
+			}
+			j++;
+		}
+
+	}
+	// không tìm được kết quả
+	document.getElementById("ketqua").innerHTML ='Kết quả: Tập luật không có kết quả cho câu query này';
+	
 }
     
 
